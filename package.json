@@ -2,10 +2,10 @@
   "name": "cache-spotify",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node src/index",
-    "dev": "nodemon src/index",
+    "start": "node src/server",
+    "dev": "nodemon src/server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
