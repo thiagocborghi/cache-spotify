@@ -1,11 +1,11 @@
-const Redis = require("ioredis");
+const Redis = require('ioredis');
 
 class cache {
   constructor() {
     this.redis = new Redis({
-      host: process.env.REDIS_HOST || "localhost",
+      host: process.env.REDIS_HOST || 'localhost',
       port: process.env.REDIS_PORT || 6379,
-      keyPrefix: "cache:",
+      keyPrefix: 'cache:',
     });
   }
 
@@ -16,7 +16,7 @@ class cache {
   }
 
   set(key, value, timeExp) {
-    return this.redis.set(key, JSON.stringify(value), "EX", timeExp);
+    return this.redis.set(key, JSON.stringify(value), 'EX', timeExp);
   }
 
   del(key) {
@@ -25,7 +25,7 @@ class cache {
 
   async delPrefix(prefix) {
     const keys = (await this.redis.keys(`cache:${prefix}:*`)).map((key) =>
-      key.replace("cache:", "")
+      key.replace('cache:', '')
     );
 
     return this.redis.del(keys);

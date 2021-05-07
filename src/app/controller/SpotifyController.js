@@ -1,8 +1,8 @@
-const api = require("./api");
+const api = require("../services/api");
 const querystring = require("querystring");
-const cache = require("./cache");
+const cache = require("../services/cache");
 
-class Spotify {
+class SpotifyController {
   async search(options) {
     const params = querystring.stringify(options);
 
@@ -58,4 +58,4 @@ class Spotify {
   }
 }
 
-module.exports = new Spotify();
+module.exports = new SpotifyController();
