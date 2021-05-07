@@ -1,6 +1,6 @@
-const api = require("../services/api");
-const querystring = require("querystring");
-const cache = require("../services/cache");
+const api = require('../services/api');
+const querystring = require('querystring');
+const cache = require('../services/cache');
 
 class SpotifyController {
   async search(options) {
